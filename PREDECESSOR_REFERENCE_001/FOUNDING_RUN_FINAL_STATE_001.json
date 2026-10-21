@@ -1,0 +1,126 @@
+{
+ "schema": "FOUNDING_RUN_FINAL_STATE_001",
+ "observed_at_utc": "2026-10-21T20:39:05Z",
+ "network_id": 1,
+ "subnet_id": "WJcV97GNpiTuQMYnCPmPeuS3JA5PvF8T2Er84PNRHoaADiFc2",
+ "operations": [
+  {
+   "step": 1,
+   "chain": "Relation",
+   "action": "ADMIT_RUN",
+   "operation_id": "e98c66819c1be0171c75750f7548021196756c7effd73eda6486120592c4c148",
+   "record_id": "71df8e2a190d1d5f1de4bd50edf2192de5f4beffc50a49e4a8b6f2741de278ce",
+   "height": 4
+  },
+  {
+   "step": 2,
+   "chain": "Matter",
+   "action": "IMPORT_RUN_DISPATCH",
+   "operation_id": "e911f3ee551aac58a489a0d3fab8a6da9b282558083b3e15026ed64659b2b761",
+   "record_id": "93e25142b540be0fe4907b9f35bbde5f2c9cc3d5475650fad001b8d93cdd2fab",
+   "height": 2
+  },
+  {
+   "step": 3,
+   "chain": "Consequence",
+   "action": "IMPORT_RUN_DISPATCH",
+   "operation_id": "834c1d54cd96f5d381df81340e17ca137c253c7ae3658296bf0ef6c4d1b57fd6",
+   "record_id": "00c6308d084542214d4cbc1a1817de71d099221933ddd81d2783f98630ab8ffe",
+   "height": 2
+  },
+  {
+   "step": 4,
+   "chain": "Relation",
+   "action": "IMPORT_SOURCE_RECEIPTS",
+   "operation_id": "7b5c6b96005e878dab1b891b8b184912e227a0dacba322270052e8f70d2c1bac",
+   "record_id": "375b4493af78d341dadb573f3acaaa23d52982147c0fea66f0d171dc3959c7b2",
+   "height": 5
+  }
+ ],
+ "relation_decision": {
+  "schema": "PRESENCE_RELATION_DECISION_001",
+  "version": 1,
+  "formation_id": "e1a3a39871b74a1cda7ea9afcdb7aa25b6a30e52151ef9c376f7f8528268dd84",
+  "third_lineage_id": "089869b7b2e0ee18d992e2b8fcefa2830c02cb36d111501214da9fc1cf0e0455",
+  "law_id": "ccf9c2cebe9835d7783fe20609506276306f85df00ec5ca3b1def4cac9d591cd",
+  "relation_basis_id": "0a65e02e2474c727df418a76b54eb21d9142d1752003a0623d1a604387f6c04a",
+  "outcome": "STAND",
+  "reason_code": "ALL_FORMAL_CONSTRAINTS_SATISFIED",
+  "claim_ceiling_id": "429ad7c2a739c6ce71a474877803ccc5fb4342b4b16330816be0519bda797dac"
+ },
+ "relation_basis": {
+  "schema": "PRESENCE_RELATION_BASIS_001",
+  "version": 1,
+  "formation_id": "e1a3a39871b74a1cda7ea9afcdb7aa25b6a30e52151ef9c376f7f8528268dd84",
+  "third_lineage_id": "089869b7b2e0ee18d992e2b8fcefa2830c02cb36d111501214da9fc1cf0e0455",
+  "law_id": "ccf9c2cebe9835d7783fe20609506276306f85df00ec5ca3b1def4cac9d591cd",
+  "run_admission_id": "bf75cd39089482e65be5d68de6664cb4dd3118872e5738db8c8d69f4149f9f4f",
+  "run_id": "896df4da9990f241ce37ae7e796cb511d0f51839626527f0e83cbd65aef086f9",
+  "presence_id": "f882898907c2c1e5dd09eef011dbd32b9546d618e656b2fab3ce6894b4fb7fa1",
+  "referent_anchor_id": "1ec225123a77ca554288f665cc0617d7f1e1a9731e31198ce6abcc6de030ad97",
+  "source_0_receipt_id": "b91b52fb706092f592b550f72e761bcb2564ac127f8aae573529e932bcc0b265",
+  "source_1_receipt_id": "d92607789339f04bd7469724e485d86ab5bde66db680024aac0974a9824d6252",
+  "source_0_candidate_id": "d96d6c7f8d813dffab7f0c4808ca767d3565d40c0450321555de6cfc3a6610c7",
+  "source_1_candidate_id": "0fa52c2d5a140e4d09afd45d4b8a28461be45aaec03b544bc9e548723c5b9783"
+ },
+ "final_run_state": {
+  "schema": "PRESENCE_THIRD_RUN_STATE_001",
+  "version": 1,
+  "third_lineage_id": "089869b7b2e0ee18d992e2b8fcefa2830c02cb36d111501214da9fc1cf0e0455",
+  "run_admission_id": "bf75cd39089482e65be5d68de6664cb4dd3118872e5738db8c8d69f4149f9f4f",
+  "run_id": "896df4da9990f241ce37ae7e796cb511d0f51839626527f0e83cbd65aef086f9",
+  "presence_id": "f882898907c2c1e5dd09eef011dbd32b9546d618e656b2fab3ce6894b4fb7fa1",
+  "law_id": "ccf9c2cebe9835d7783fe20609506276306f85df00ec5ca3b1def4cac9d591cd",
+  "referent_anchor_id": "1ec225123a77ca554288f665cc0617d7f1e1a9731e31198ce6abcc6de030ad97",
+  "status": "CLOSED_STAND",
+  "source_0_receipt_id": "b91b52fb706092f592b550f72e761bcb2564ac127f8aae573529e932bcc0b265",
+  "source_1_receipt_id": "d92607789339f04bd7469724e485d86ab5bde66db680024aac0974a9824d6252",
+  "relation_basis_id": "0a65e02e2474c727df418a76b54eb21d9142d1752003a0623d1a604387f6c04a",
+  "decision_id": "18cdcaa2f6f4085856001e6eedf002a22034741d812bde29f204c068f48980bb",
+  "hold_record_id": "0000000000000000000000000000000000000000000000000000000000000000",
+  "hold_reason": "NONE",
+  "revision": 1
+ },
+ "relation_third_state": {
+  "schema": "PRESENCE_THIRD_STATE_001",
+  "version": 1,
+  "formation_id": "e1a3a39871b74a1cda7ea9afcdb7aa25b6a30e52151ef9c376f7f8528268dd84",
+  "third_lineage_id": "089869b7b2e0ee18d992e2b8fcefa2830c02cb36d111501214da9fc1cf0e0455",
+  "kernel_id": "35ea29f51b73a3340dd7786259f22665dd0574b7a6b1b85fd6cb173f430f7828",
+  "lifecycle": "ACTIVE",
+  "revision": 3,
+  "transition_index": 3,
+  "active_law_id": "ccf9c2cebe9835d7783fe20609506276306f85df00ec5ca3b1def4cac9d591cd",
+  "admission_sequence": 1,
+  "admitted_run_count": 1,
+  "pending_run_count": 0,
+  "closed_run_count": 1,
+  "last_transition_id": "462f7328b0dc2f9a74cb2a37d565348c846e18e7e138403fcff9ea102b3f4488",
+  "activation_accumulator": "a8771ce20309e8064ee99efc3b6c8e502de4ad8d40cf1e2575ca00639d146962",
+  "admission_accumulator": "64b471f9cbca4ae8ace83a0074b731d5e949d8d7fc6efc1384848cdbc91a5809",
+  "relation_accumulator": "3918638aea1f74c34a90797126e0f5e72432a5f9f19f8e5e5e3ebcc001e57848",
+  "run_index_accumulator": "8a45ced40de008ca958887ed351e740bbeb473576bb5078546b24e95f8ddebc6"
+ },
+ "final_commitments": {
+  "Relation": {
+   "portable_state_id": "70c75c372c3c5fa46b093494bc0db05cea11735aee62f62e172224c32447e1ff",
+   "adapter_state_id": "9726afff8ce2e0c3102d79b543d6a33f0e3c6e2f913ac12e70630fe04e6a4793",
+   "embodied_state_id": "487e9e21fe9f2f11534c38dd881e923145dce0b9c101163c6e26c9b4d10f83f2",
+   "height": 5,
+   "last_accepted_block": "yxCEqtk4Mq1wxZNey8R1uevoKNTafMFt2ABBzoFUsmFNc4gFN"
+  },
+  "Matter": {
+   "portable_state_id": "e636f87eb5d1e6189afd1230e55269756d850ccaae0d42fb32345107b6a61652",
+   "embodied_state_id": "b936219c21992989f13c3935dbd4b85c3161c0a313e234cb1fee6463c9d147d0",
+   "height": 2,
+   "sequence": 1
+  },
+  "Consequence": {
+   "portable_state_id": "2dd2f64561c51a781ba80aa97d08fd58f64fccefb79a13d1686d850803ccc016",
+   "embodied_state_id": "ec7e43b11ca96edd51a16da4a1f1f5075143f39eaf8febcccdaf840b0fec7ad7",
+   "height": 2,
+   "sequence": 1
+  }
+ },
+ "vm005_remaining_admissible_operations": "NONE (one-run capacity exhausted; succession DISABLED_IN_VM005)"
+}
