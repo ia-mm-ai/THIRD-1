@@ -1,0 +1,87 @@
+{
+  "schema": "CONTINUITY_L1_HANDOFF_BINDINGS_001",
+  "status": "CANDIDATE_UNCOMPILED",
+  "classification": "DETERMINISTIC_CHAINVM_REHEARSAL_CANDIDATE",
+  "repository_binding": {
+    "repository": "ia-mm-ai/THIRD-1",
+    "base_commit": "87ed94455456a95e0ac565043b338a80f8142774",
+    "candidate_branch": "chatgpt/continuity-l1-001",
+    "artifact_root": ".",
+    "source_file_path_resolution": "REPOSITORY_ROOT_RELATIVE",
+    "handoff_protocol": {
+      "path": "HANDOFF_PROTOCOL_001.md",
+      "bytes": 6197,
+      "sha256": "57e21ac4fc5b8027afbf0caf4e389cc8a545b363decc19f9890714785b44913f"
+    },
+    "upstream_source_forms": [
+      {"path":"00_SUBSTRATE/00_SUBSTRATE.md","bytes":9301,"sha256":"6c3ea987c07840c9f019e6f9bee6e54e9eef6c4465359036c0ab2b455a431b99"},
+      {"path":"01_ONTOLOGY/01_ONTOLOGY.md","bytes":168760,"sha256":"25bdaf01bab4db5fea2e88d7efb207428ec0ee64797d9ebb8fb7b0f659819efd"},
+      {"path":"02_CONSTITUTION/02_CONSTITUTION.md","bytes":97393,"sha256":"6a2c369e7570d5dd717b98cbb8216fed8d3c225eeeb166661d362b3120608f12"},
+      {"path":"03_STRUCTURE/03_STRUCTURE.md","bytes":144167,"sha256":"ce3314ff3c14a5f7d130f9586b66a94442023a25dae2c4f0e3b92a712101b3bd"},
+      {"path":"04_DYNAMICS/04_DYNAMICS.md","bytes":223537,"sha256":"7bad40540a33b20ed06e4321c01322c0b50643fb5de931e1df236254f0d161fe"},
+      {"path":"05_CONTINUITY/05_CONTINUITY.md","bytes":265503,"sha256":"a48c45edd3877fa1b6dbf14c46894502d4d147b15f32588b08b736a4318e8f6b"},
+      {"path":"06_EMERGENCE/06_EMERGENCE.md","bytes":212730,"sha256":"1fd0c96212788a2779dfa15a0f0581198164ec8dd11c905b8e7008e7edd769c3"},
+      {"path":"[integrity_kernel]/[integrity_kernel].pdf","bytes":684484,"sha256":"987757c2deea2e0e5ebab58ee067b5d98b2052edabcfa44c6e39b5e2953a0302"}
+    ]
+  },
+  "authorized_next_boundary": "GO_COMPILE_TEST_AND_LOCAL_AVALANCHEGO_REHEARSAL",
+  "wire": {
+    "protocol": "CONTINUITY_L1_001",
+    "kernel": "002",
+    "avalanchego": "v1.15.0"
+  },
+  "origin": {
+    "operation": "OPEN_RELATION",
+    "predecessor_runtime_dependency": false
+  },
+  "bridge": {
+    "tests_passed": 32,
+    "tests_failed": 0,
+    "vectors": 19,
+    "lifecycle_steps": 5,
+    "suite_hash": "ce74eea2aa34cc3ded66b9213de37f2ccdde3bc769a14c265e7c84fb53b7ad01",
+    "vectors_sha256": "8c0469d0e97f901c6ff3c88e09b98b9adf8439d093674d362a07f2c4695121b6"
+  },
+  "go": {
+    "compiled": false,
+    "tests_executed": false,
+    "reason": "GO_TOOLCHAIN_UNAVAILABLE_IN_BUILD_ENVIRONMENT",
+    "static_interface_audit": "PASS",
+    "static_kernel_audit": "PASS"
+  },
+  "candidate_build_external_actions": {
+    "irreversible": 0
+  },
+  "production_blockers": [
+    "FINITE_STATE_EXHAUSTION_WITH_UNAUTHENTICATED_INGRESS",
+    "FULL_SNAPSHOT_STORAGE_AND_QUADRATIC_RESTART_REPLAY",
+    "UNBOUNDED_RETIRED_OPERATION_ARCHIVE"
+  ],
+  "source_files": [
+    {"path":"avalanchevm/api.go","bytes":5933,"sha256":"02365f178977a3d44b221bc71c3d6f54ee2d50701c7d877729528f3e124bb31c"},
+    {"path":"avalanchevm/block.go","bytes":5053,"sha256":"25f5c9f9c5480298f6704ef6efefb5727d948d8ad0167b14e71f7b5757754a7f"},
+    {"path":"avalanchevm/codec.go","bytes":4343,"sha256":"0e37bdbe4c7aab6332cd7067c433635c8af44df1f6948b00d4b686e82f134c92"},
+    {"path":"avalanchevm/genesis.go","bytes":5182,"sha256":"40e2a9a22e916a728543c31d4ba3a45f478c7e845b3d46db71a497ef89f427cf"},
+    {"path":"avalanchevm/operation.go","bytes":6689,"sha256":"e6d0eff6116b92a2ea67660f5b6d0da8da9796515d5bd2ec7592f4ba2492eb2f"},
+    {"path":"avalanchevm/operation_test.go","bytes":6503,"sha256":"c8dd09bd103e1698fee4172b93534bea2650a158cc6064a1bd222d8c11b189bd"},
+    {"path":"avalanchevm/persistence.go","bytes":17233,"sha256":"a6011a90186a7d51171b5624f2e59ba1140a9fa9a9d4cff6683d75feba3b0bcc"},
+    {"path":"avalanchevm/persistence_test.go","bytes":2727,"sha256":"38858c2d650402005e6ff236bc4506f1911e8f14eddefaeaa0738a9ededd2f40"},
+    {"path":"avalanchevm/protocol.go","bytes":2583,"sha256":"7e2118887cbb06193dee9d3c6ad0d1e2ef713ec7c05bc3ea7d003b0d500bc121"},
+    {"path":"avalanchevm/vm.go","bytes":27987,"sha256":"ab68db92ed7a60d2402b830e98751f62805b7e347797b0b278573797cc0812bd"},
+    {"path":"avalanchevm/vm_test.go","bytes":14542,"sha256":"d448bfe669cf2dd624484b5eb3122a9a76f573de59d42156d794b3c6417a35fc"},
+    {"path":"bridge/package.json","bytes":195,"sha256":"cd687a97b5f8da108ea5c86187c7c74c719e3d53779a28740d24c362bc04766d"},
+    {"path":"bridge/src/continuity.mjs","bytes":32021,"sha256":"ca75e9deb7fb57bf740495c4d7c0249ead14163436a4c1a01db7bd58905c2324"},
+    {"path":"bridge/src/ik002.mjs","bytes":12879,"sha256":"9db7772ef857d75e81d31d320a0bdf519db8b8564707ca3eab8210a2cf7e680c"},
+    {"path":"bridge/test/bridge.test.mjs","bytes":10387,"sha256":"282925836527dd1ecaee936394a56535d0efee46bdcfbac9dab92c9adc979b61"},
+    {"path":"bridge/tools/forge-vectors.mjs","bytes":13719,"sha256":"420ce8de37b670a5bd399d1de5dc0cf4193c71e749832b2c2d873939d886ed04"},
+    {"path":"bridge/vectors/continuity_vectors_001.json","bytes":170196,"sha256":"8c0469d0e97f901c6ff3c88e09b98b9adf8439d093674d362a07f2c4695121b6"},
+    {"path":"cmd/continuity-vm/main.go","bytes":290,"sha256":"f69d3094c7d00d24f560d93d94100ae9d623b649d32d9a9d8d951ce19367acee"},
+    {"path":"go.mod","bytes":96,"sha256":"3257bb04b2c347012765789d8e5e150b8a9862b22f4c236db8770fd641e52eaf"},
+    {"path":"go.sum","bytes":72889,"sha256":"8bed265ae7e3b78dec4c2571a0e9d149361c2e4a5c6b097c40c954e0fa0fc9e8"},
+    {"path":"kernel/apply.go","bytes":19373,"sha256":"57bc194b9fe464efb3b029511d7f4a63a9017d1b5e7683dc41f42ded8b0a65f4"},
+    {"path":"kernel/canonical.go","bytes":14794,"sha256":"90223c6dac8c9a831005b05b47d6a4e0a8ff3ee570068ac5ce4615f4d35f8cb4"},
+    {"path":"kernel/kernel_test.go","bytes":33359,"sha256":"4041ba4856892fdfbe1f99d9df78a5a38f1f4c5ffae109966cf3ff4f68bdbb39"},
+    {"path":"kernel/types.go","bytes":11186,"sha256":"cd7dc46191afd8daebb720997c19456ce11a4bf826978bebd053bf107e333e4c"},
+    {"path":"kernel/validate.go","bytes":17018,"sha256":"00a5698c7be561eef5e6ac4bcaaa3894e825a9456f5f1cad1663cbfd6ee92275"}
+  ]
+}
