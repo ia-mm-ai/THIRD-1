@@ -8,11 +8,6 @@
     "candidate_branch": "chatgpt/continuity-l1-001",
     "artifact_root": ".",
     "source_file_path_resolution": "REPOSITORY_ROOT_RELATIVE",
-    "handoff_protocol": {
-      "path": "HANDOFF_PROTOCOL_001.md",
-      "bytes": 6197,
-      "sha256": "57e21ac4fc5b8027afbf0caf4e389cc8a545b363decc19f9890714785b44913f"
-    },
     "upstream_source_forms": [
       {"path":"00_SUBSTRATE/00_SUBSTRATE.md","bytes":9301,"sha256":"6c3ea987c07840c9f019e6f9bee6e54e9eef6c4465359036c0ab2b455a431b99"},
       {"path":"01_ONTOLOGY/01_ONTOLOGY.md","bytes":168760,"sha256":"25bdaf01bab4db5fea2e88d7efb207428ec0ee64797d9ebb8fb7b0f659819efd"},
