@@ -1,0 +1,94 @@
+{
+ "schema": "THIRD1_VERIFICATION_002",
+ "version": 1,
+ "verified_by": "Chamber B (Claude, Marko's machine)",
+ "verified_at_utc": "2026-10-22T20:45:00Z",
+ "authorization": "Marko authorized execution of the externally received code in this turn, in a scratch extraction only.",
+ "subject": {
+  "repository": "ia-mm-ai/THIRD-1",
+  "branch": "chatgpt/continuity-l1-001",
+  "commit": "edb8db913e84aac789b08d28b9e3e6577e45d905",
+  "boundary": "GO_COMPILE_TEST (manifest authorized_next_boundary)"
+ },
+ "environment": {
+  "go": "go1.27.1 darwin/arm64 at /usr/local/go/bin/go",
+  "GOTOOLCHAIN": "auto",
+  "extraction": "git archive of the exact commit into scratch; the checkout was not touched",
+  "node": "absent; bridge tests not run"
+ },
+ "results": [
+  {
+   "id": "C1",
+   "check": "go build ./... at the committed bytes",
+   "result": "FAIL",
+   "detail": "go: updates to go.mod needed; to update it: go mod tidy. The committed go.mod (96 bytes) declares only github.com/ava-labs/avalanchego v1.15.0 and omits every indirect requirement; the toolchain refuses to build in the default readonly module mode. Same refusal for go vet and go test."
+  },
+  {
+   "id": "C2",
+   "check": "committed go.sum provenance",
+   "result": "FINDING",
+   "detail": "go.sum at edb8db9 (72,889 bytes, sha256 8bed265ae7e3b78dec4c2571a0e9d149361c2e4a5c6b097c40c954e0fa0fc9e8) is byte-identical to PRESENCE_L1_RELEASE_CANDIDATE/SYSTEM/AVALANCHE/AVALANCHE_IMPLEMENTATION_005/vm/go.sum, the predecessor VM005's checksum file. It carries 761 lines; the candidate needs 130, all of which are a subset of the 761. The manifest states predecessor_runtime_dependency=false, which holds for the code, but this file was carried from the predecessor verbatim and unmarked. Under HANDOFF_PROTOCOL_001 \u00a74 that is a silent carry. It has no semantic effect on the kernel; it is a provenance defect."
+  },
+  {
+   "id": "C3",
+   "check": "go mod tidy in scratch (OFF-MANIFEST DIAGNOSTIC, not the committed bytes)",
+   "result": "DIAGNOSTIC",
+   "detail": "tidy added 49 indirect requirements to go.mod and reduced go.sum from 761 to 130 lines, adding no checksum that was not already present. Tidied files are attached as go.mod.tidied and go.sum.tidied.",
+   "go_mod_tidied": {
+    "bytes": 2641,
+    "sha256": "0005d466e14e540f1827a06b29075f46eb7afaa9f3d986717a7c594aec18a1e5"
+   },
+   "go_sum_tidied": {
+    "bytes": 11756,
+    "sha256": "79b48ab6e0aeb43502587ebbfd2a5f7e30214c89531667cdf7c70f383eea408e"
+   }
+  },
+  {
+   "id": "C4",
+   "check": "go build ./... with tidied go.mod",
+   "result": "PASS"
+  },
+  {
+   "id": "C5",
+   "check": "go vet ./... with tidied go.mod",
+   "result": "PASS"
+  },
+  {
+   "id": "C6",
+   "check": "go test ./... -count=1 with tidied go.mod and full tree",
+   "result": "PASS",
+   "detail": "avalanchevm ok, kernel ok, cmd/continuity-vm has no tests. 32 subtests passed, 0 failed."
+  },
+  {
+   "id": "C7",
+   "check": "go test -race on kernel and avalanchevm",
+   "result": "PASS"
+  },
+  {
+   "id": "C8",
+   "check": "Chamber B procedural error, disclosed",
+   "result": "NOTE",
+   "detail": "My first test run extracted only go.mod, go.sum, avalanchevm, kernel and cmd and omitted bridge/. Eleven kernel tests then failed solely on reading ../bridge/vectors/continuity_vectors_001.json. That failure was mine. With bridge/ extracted every test passes. Recorded so no one mistakes the earlier output for a candidate defect."
+  },
+  {
+   "id": "C9",
+   "check": "bridge tests (node --test)",
+   "result": "NOT_EXECUTED",
+   "reason": "No Node.js on this machine. Chamber A's 32/32 bridge claim remains unconfirmed here; the Go kernel tests do consume the same frozen vectors file and pass against it."
+  }
+ ],
+ "result": "COMMITTED_BYTES_FAIL_BUILD; SOURCE_PASSES_WITH_TIDIED_MODULE_FILES",
+ "meaning": "The code in chatgpt/continuity-l1-001 compiles, vets, passes its own 32 tests and the race detector, given a module file the toolchain accepts. The commit as it stands does not build. The defect is confined to go.mod and go.sum, and go.sum is a verbatim carry from the predecessor.",
+ "required_of_chamber_a": [
+  "Do not amend edb8db9; the branch is frozen. Open chatgpt/continuity-l1-002 from it.",
+  "Replace go.mod and go.sum with toolchain-produced files; the attached go.mod.tidied and go.sum.tidied are a known-good pair for this exact source and may be adopted byte for byte.",
+  "Update HANDOFF_BINDINGS to bind the new go.mod and go.sum, set go.compiled and go.tests_executed truthfully from Chamber A's own run or leave them false, and state the go.sum provenance.",
+  "Then Chamber B re-verifies and the result becomes VERIFICATION_003."
+ ],
+ "non_claims": [
+  "not an audit of kernel semantics or of the production_blockers the manifest itself lists",
+  "not a local AvalancheGo rehearsal",
+  "not authorization for chain creation or funding",
+  "not adoption"
+ ]
+}
