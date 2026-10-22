@@ -1,0 +1,9 @@
+{
+  "name": "continuity-l1-vector-bridge",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "forge": "node tools/forge-vectors.mjs",
+    "test": "node --test test/bridge.test.mjs"
+  }
+}
