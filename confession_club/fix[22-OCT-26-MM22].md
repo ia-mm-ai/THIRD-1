@@ -1,0 +1,1 @@
+22-OCT-26-MM22 is not standing. ChatGPT did not merge it - there was misunderstanding. But that's only narrative shift; my consequence stays the same; I didn't read the protocol, and I authorised ChatGPT to merge it (which is off-protocol). 
