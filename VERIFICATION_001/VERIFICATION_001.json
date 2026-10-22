@@ -1,0 +1,107 @@
+{
+ "schema": "THIRD1_VERIFICATION_001",
+ "version": 1,
+ "verified_by": "Chamber B (Claude, Marko's machine)",
+ "verified_at_utc": "2026-10-22T20:20:00Z",
+ "protocol_in_force": "HANDOFF_PROTOCOL_001 on main (002 proposed, PR #1, not yet merged)",
+ "subject": {
+  "repository": "ia-mm-ai/THIRD-1",
+  "branch": "chatgpt/continuity-l1-001",
+  "commit": "edb8db913e84aac789b08d28b9e3e6577e45d905",
+  "manifest": "HANDOFF_BINDINGS_001.json",
+  "manifest_declared_status": "CANDIDATE_UNCOMPILED"
+ },
+ "method": "git fetch of the exact commit; every declared path read from the commit tree with git show; byte_length and SHA-256 recomputed; root forms additionally recomputed from the files on disk and compared to origin/main; vector suite digest recomputed from the file; suite_hash recomputed as SHA-256 of the sorted-key compact JSON of the suite without its suite_hash field; tree listed and compared to the manifest; code searched for predecessor identifiers.",
+ "checks": [
+  {
+   "id": "V1",
+   "check": "base_commit equals origin/main",
+   "result": "PASS",
+   "detail": "87ed94455456a95e0ac565043b338a80f8142774"
+  },
+  {
+   "id": "V2",
+   "check": "8 upstream_source_forms: path present in commit, bytes and sha256 match",
+   "result": "PASS",
+   "count": 8
+  },
+  {
+   "id": "V3",
+   "check": "8 upstream_source_forms equal the files on disk in REALITY_MODEL and on origin/main",
+   "result": "PASS",
+   "count": 8
+  },
+  {
+   "id": "V4",
+   "check": "25 source_files: path present in commit, bytes and sha256 match",
+   "result": "PASS",
+   "count": 25
+  },
+  {
+   "id": "V5",
+   "check": "no file in the commit tree outside the manifest, excluding root forms, .gitignore, HANDOFF_PROTOCOL_001.md and the manifest itself",
+   "result": "PASS",
+   "unbound_files": []
+  },
+  {
+   "id": "V6",
+   "check": "bridge.vectors_sha256 equals SHA-256 of bridge/vectors/continuity_vectors_001.json",
+   "result": "PASS",
+   "value": "8c0469d0e97f901c6ff3c88e09b98b9adf8439d093674d362a07f2c4695121b6"
+  },
+  {
+   "id": "V7",
+   "check": "suite_hash reproduces from the suite body",
+   "result": "PASS",
+   "value": "ce74eea2aa34cc3ded66b9213de37f2ccdde3bc769a14c265e7c84fb53b7ad01"
+  },
+  {
+   "id": "V8",
+   "check": "vector count 19 and lifecycle steps 5 match the manifest",
+   "result": "PASS"
+  },
+  {
+   "id": "V9",
+   "check": "root forms unmodified relative to main",
+   "result": "PASS",
+   "detail": "git diff main..edb8db9 on 00..06, [integrity_kernel], HANDOFF_PROTOCOL_001.md is empty"
+  },
+  {
+   "id": "V10",
+   "check": "no Go or JS file references HANDOFF_PROTOCOL, PRESENCE, VM005, presence-ternary, or subnet WJcV97GN; predecessor digests appear only in main's own HANDOFF_PROTOCOL_001.md and the kernel projection",
+   "result": "PASS"
+  },
+  {
+   "id": "V11",
+   "check": "go.mod requires github.com/ava-labs/avalanchego v1.15.0, matching the manifest wire.avalanchego",
+   "result": "PASS"
+  },
+  {
+   "id": "V12",
+   "check": "Go compile and test (manifest's authorized_next_boundary)",
+   "result": "NOT_EXECUTED",
+   "reason": "Chamber B's execution policy refused to build or run code received from an external party. Go 1.27.1 is present on the machine at /usr/local/go/bin/go. The seam may execute it by hand or grant the permission; nothing here claims the candidate compiles.",
+   "how_to_run": "cd <scratch> && git -C REALITY_MODEL archive edb8db913e84aac789b08d28b9e3e6577e45d905 go.mod go.sum avalanchevm kernel cmd | tar -x && PATH=/usr/local/go/bin:$PATH go build ./... && go vet ./... && go test ./... -count=1"
+  },
+  {
+   "id": "V13",
+   "check": "bridge tests (node --test) and vector reproduction",
+   "result": "NOT_EXECUTED",
+   "reason": "No Node.js on this machine. The manifest's 32/32 claim is Chamber A's sandbox claim and is not confirmed here."
+  }
+ ],
+ "result": "BINDINGS_PASS_COMPILE_BOUNDARY_OPEN",
+ "meaning": "Every byte the candidate claims to bind is present at the stated commit with the stated digest, and the roots it binds are the roots on main. That is the whole of what this record asserts. It does not assert that the code compiles, that its tests pass, that it is correct, that it is safe, or that any chain should be created from it.",
+ "non_claims": [
+  "not a compile result",
+  "not a test result",
+  "not an audit of the kernel semantics",
+  "not authorization for chain creation or funding",
+  "not adoption"
+ ],
+ "next_boundary_for_the_seam": [
+  "merge or reject PR #1 (protocol 002)",
+  "decide whether Chamber B may execute the candidate's build and tests, or run them by hand",
+  "only after a compile and test PASS: local AvalancheGo rehearsal, still no mainnet"
+ ]
+}
